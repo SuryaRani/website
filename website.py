@@ -13,7 +13,7 @@ def index():
     linkedin = url_for('static', filename='linkedin.png')
     github = url_for('static', filename='github.png')
 
-
+    
     return render_template("index.html",instagram=instagram,email=email,linkedin=linkedin,github=github)
 
 

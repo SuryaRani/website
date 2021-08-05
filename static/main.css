@@ -1,19 +1,21 @@
 body {
   display: flex;
   flex-direction: column;
-  background: #cccccc;
+  background: #cccccc; /* this is for behind the jumbotron*/
   color: #333333;
   margin-top: 5rem;
 }
 
 
-
+.site-header .navbar-brand{
+  color: #111010;
+}
 .display-4{
   color: #111010; /*this is for the big text on the jumbotron changes the color*/
 }
 
 .jumbotron{
-background: #79786c ; /*this is for the main part of the home page wiht my name and the social media*/
+background: #cccccc ; /*this is for the main part of the home page wiht my name and the social media*/
 color: #110808;
 /*background-color:none !important;*/
 }
@@ -23,7 +25,7 @@ color: #110808;
 }
 
 .site-header .navbar-nav .nav-link {          /* Controls wording on Nav*/
-  color: #5272a3;
+  color: #ffffff;
 }
 
 .site-header .navbar-nav .nav-link.active {
@@ -45,5 +47,3 @@ color: #110808;
   text-align: center;
   align-self: center;
 }
-
-
