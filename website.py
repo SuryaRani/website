@@ -19,7 +19,10 @@ def index():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+
+    image_file = url_for('static', filename='myPic.png')
+    return render_template('about.html', image_file=image_file)
+   
 
 
 @app.route("/projects")
