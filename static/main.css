@@ -6,6 +6,19 @@ body {
   margin-top: 5rem;
 }
 
+.profile-image{ /*to make my profile image ciruclar*/
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profile-image img { /*this is to change the position of the picture so it shows me in the center instead of the top of the picture*/
+  width: 100%;
+  height: auto;
+  margin-top: -90px;
+  
+}
 
 .site-header .navbar-brand{
   color: #111010;
