@@ -27,7 +27,9 @@ def about():
 
 @app.route("/projects")
 def projects():
-    return render_template("projects.html")
+    first_project = url_for('static', filename='myPic.png')
+    second_project = url_for('static', filename='myPic.png')
+    return render_template("projects.html",first_project=first_project,second_project=second_project)
 
 if __name__ == "__main__":
     app.run(debug=True)
