@@ -53,20 +53,18 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">Multi-threaded HTTP server <span class="text-muted">Checkmate.</span>
+                <h2 class="featurette-heading">Multi-threaded HTTP server <span class="text-muted">Improving
+                        Performance.</span>
                 </h2>
-                <p class="lead">And yes, this is the last block of representative placeholder content. Again, not
-                    really intended to be actually read, simply here to give you a better view of what this would
-                    look like with some actual content. Your content.</p>
+                <p class="lead">This is an improved version of the simple HTTP server which includes multi threading to
+                    be able to speedup the execution time of the server if it recieves a large number of HTTP requests.
+                    By improving throughput and having each thread handle its own request we significantly improve run
+                    times.</p>
             </div>
-            <div class="col-md-5">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                        dy=".3em">500x500</text>
-                </svg>
+            <div class="col-md-5 order-md-1">
+                <img src={{third_project}} vspace="3" width="auto" height="auto"
+                    style="max-width: 500px; max-height: 500px">
+
 
             </div>
         </div>
@@ -75,24 +73,23 @@
 
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">HTTP Load Balancer <span class="text-muted">Functionality:
-                        GET,PUT,HEAD</span></h2>
-                <p class="lead">This is a simple http server that I created that is able to recieve http requests, parse
-                    the request and complete each request, GET: sends client the requested file if it is currently on
-                    the
-                    server. If not returns a http error for client to parse. PUT: client sends a file to my server and I
-                    store the file onto my server. HEAD: sends the client back the size of the file data it called the
-                    function on. If it is none of these requests then I would send a http bad request error back to the
-                    client.</p>
+                <h2 class="featurette-heading">HTTP Load Balancer <span class="text-muted">The Middleman</span></h2>
+                <p class="lead">The load balancer was designed and implemented to be the middleman between the server
+                    and the client. Neither the server nor the client has direct access to one another, but thinks it is
+                    talking to one another but the loadbalancer is emulating both the client and server. The
+                    loadbalancer also has a main purpose in which that it can hold many servers and choose which server
+                    it wants to send the next client requests to. It does this by creating a thread which acts as a
+                    healthprobe. This probe then checks every X seconds which is determined by the user and sends a
+                    request to each of the servers to see how many total requests each server has. It then determines
+                    the server with the least requests thus far and would send them the next X seconds of client
+                    requests. In the case that any single server is down and does not respond to the healthcheck, our
+                    loadbalancer will flag this server as a downded server and would not send any requests to it until
+                    it responds again. </p>
             </div>
             <div class="col-md-5 order-md-1">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                        dy=".3em">500x500</text>
-                </svg>
+                <img src={{fourth_project}} vspace="3" width="auto" height="auto"
+                    style="max-width: 500px; max-height: 500px">
+
 
             </div>
         </div>
@@ -101,19 +98,30 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">Server Side Cache <span class="text-muted">Checkmate.</span></h2>
-                <p class="lead">And yes, this is the last block of representative placeholder content. Again, not
-                    really intended to be actually read, simply here to give you a better view of what this would
-                    look like with some actual content. Your content.</p>
+                <h2 class="featurette-heading">Server Side Cache <span class="text-muted">Reduces Repeat Request
+                        Time.</span></h2>
+                <p class="lead">I designed a cache to be once again in the middle of the client and the server, but
+                    instead of choosing which server to send client requests to it simply saves X amount of requests
+                    from the client and X amount of responses from the server to be used if a repeat request came. X is
+                    determined by the user to change the cache size. If a repeat request is sent by the client and it is
+                    still in the cache we will direclty send the response from the cache itself without ever having to
+                    send the request to the server and waitiing for its response. I also implemented two different ways
+                    for the cache to be continually updated with a FIFO option, and a last modified option either of
+                    which is chosen by the user. The FIFO option is straight forward in that the first request when ever
+                    the cache is full will be the first one removed from the cache. The last modified option is slightly
+                    trickier as it relates to the last modified time of the file the client is requesting. We keep track
+                    of each files last modified time and whenver the cache is full and needs to remove a file, it will
+                    remove the one that was updated last. I also check for if our cache is up to date with the file on
+                    the server side as well. If we get a repeat request the cache immediatly checks the files last
+                    modified time as well as the last modified time of the same file on the server. If they are the same
+                    or the cache is newer then we automatically send the file from the cache to the client. If the file
+                    was updated on the server but not on the cache then we would have to send it form the server to the
+                    client like we normally do. </p>
             </div>
-            <div class="col-md-5">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                        dy=".3em">500x500</text>
-                </svg>
+            <div class="col-md-5 order-md-1">
+                <img src={{fifth_project}} vspace="3" width="auto" height="auto"
+                    style="max-width: 500px; max-height: 500px">
+
 
             </div>
         </div>
