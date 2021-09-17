@@ -15,9 +15,10 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">My Website. <span class="text-muted">Made with Flask</span></h2>
+                <h2 class="featurette-heading"><a href="https://github.com/SuryaRani/website">My Website</a>
+                    <span class="text-muted">Made with Flask</span></h2>
                 <p class="lead">This is my personal website which contains a description about me and what I like to do.
-                    I created this using Flask and pulling from bootstrap examples and making them my own.</p>
+                    I created this using Flask and pulling from bootstrap examples and making them my own. </p>
             </div>
             <div class="col-md-5 order-md-1">
                 <img src={{first_project}} vspace="3" width="auto" height="auto"
@@ -31,7 +32,8 @@
 
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Simple HTTP Server <span class="text-muted">Functionality:
+                <h2 class="featurette-heading"><a href="https://github.com/SuryaRani/Cse130/tree/main/asgn1">Simple HTTP
+                        Server</a> <span class="text-muted">Functionality:
                         GET,PUT,HEAD</span></h2>
                 <p class="lead">This is a simple http server that I created that is able to recieve http requests, parse
                     the request and complete each request, GET: sends client the requested file if it is currently on
@@ -39,7 +41,8 @@
                     server. If not returns a http error for client to parse. PUT: client sends a file to my server and I
                     store the file onto my server. HEAD: sends the client back the size of the file data it called the
                     function on. If it is none of these requests then I would send a http bad request error back to the
-                    client.</p>
+                    client.
+                </p>
             </div>
             <div class="col-md-5 order-md-1">
                 <img src={{second_project}} vspace="3" width="auto" height="auto"
@@ -53,13 +56,16 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">Multi-threaded HTTP server <span class="text-muted">Improving
+                <h2 class="featurette-heading"><a
+                        href="https://github.com/SuryaRani/Cse130/tree/main/asgn2">Multi-Threaded HTTP Server</a> <span
+                        class="text-muted">Improving
                         Performance.</span>
                 </h2>
                 <p class="lead">This is an improved version of the simple HTTP server which includes multi threading to
                     be able to speedup the execution time of the server if it recieves a large number of HTTP requests.
                     By improving throughput and having each thread handle its own request we significantly improve run
-                    times.</p>
+                    times.
+                </p>
             </div>
             <div class="col-md-5 order-md-1">
                 <img src={{third_project}} vspace="3" width="auto" height="auto"
@@ -73,7 +79,9 @@
 
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">HTTP Load Balancer <span class="text-muted">The Middleman</span></h2>
+                <h2 class="featurette-heading"> <a
+                        href="https://github.com/SuryaRani/Cse130/tree/main/asgn3">Client/Server Load Balancer</a> <span
+                        class="text-muted">The Middleman</span></h2>
                 <p class="lead">The load balancer was designed and implemented to be the middleman between the server
                     and the client. Neither the server nor the client has direct access to one another, but thinks it is
                     talking to one another but the loadbalancer is emulating both the client and server. The
@@ -84,7 +92,8 @@
                     the server with the least requests thus far and would send them the next X seconds of client
                     requests. In the case that any single server is down and does not respond to the healthcheck, our
                     loadbalancer will flag this server as a downded server and would not send any requests to it until
-                    it responds again. </p>
+                    it responds again.
+                </p>
             </div>
             <div class="col-md-5 order-md-1">
                 <img src={{fourth_project}} vspace="3" width="auto" height="auto"
@@ -98,7 +107,9 @@
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">Server Side Cache <span class="text-muted">Reduces Repeat Request
+                <h2 class="featurette-heading"><a href="https://github.com/SuryaRani/Cse130/tree/main/asgn3">Server Side
+                        Cache
+                    </a> <span class="text-muted">Reduces Repeat Request
                         Time.</span></h2>
                 <p class="lead">I designed a cache to be once again in the middle of the client and the server, but
                     instead of choosing which server to send client requests to it simply saves X amount of requests
@@ -116,7 +127,8 @@
                     modified time as well as the last modified time of the same file on the server. If they are the same
                     or the cache is newer then we automatically send the file from the cache to the client. If the file
                     was updated on the server but not on the cache then we would have to send it form the server to the
-                    client like we normally do. </p>
+                    client like we normally do.
+                </p>
             </div>
             <div class="col-md-5 order-md-1">
                 <img src={{fifth_project}} vspace="3" width="auto" height="auto"
